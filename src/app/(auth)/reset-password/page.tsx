@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Lock, Eye, EyeOff, CheckCircle, AlertCircle } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 
 const ResetPasswordPage = () => {
   const [password, setPassword] = useState('');
@@ -11,7 +10,6 @@ const ResetPasswordPage = () => {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<{ password?: string; confirmPassword?: string }>({});
-  const router = useRouter();
   // Password strength indicator
   const getPasswordStrength = (pwd: string) => {
     if (pwd.length === 0) return { strength: 0, label: '', color: '' };
