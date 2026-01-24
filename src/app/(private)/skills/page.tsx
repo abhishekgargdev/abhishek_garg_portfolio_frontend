@@ -12,7 +12,7 @@ interface Skill {
   description: string;
 }
 
-const skillsPage = () => {
+const SkillsPage = () => {
   const [skills, setSkills] = useState<Skill[]>([
     {
       id: '1',
@@ -49,7 +49,7 @@ const skillsPage = () => {
     };
     setSkills([...skills, newSkill]);
   };
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const updateSkill = (id: string, field: keyof Skill, value: any) => {
     setSkills(skills.map((skill) => (skill.id === id ? { ...skill, [field]: value } : skill)));
   };
@@ -232,4 +232,4 @@ const skillsPage = () => {
   );
 };
 
-export default skillsPage;
+export default SkillsPage;
