@@ -7,7 +7,7 @@ export const RESET_PASSWORD_URL = '/reset-password';
 // Private/Admin Routes
 export const DASHBOARD_APP_URL = '/dashboard';
 export const HERO_URL = '/hero';
-export const ABOUT_URL = '/about-me';
+export const ABOUT_URL = '/about';
 export const EXPERIENCE_URL = '/experience';
 export const SKILLS_URL = '/skills';
 export const PROJECTS_URL = '/projects';
