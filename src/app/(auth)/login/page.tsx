@@ -61,17 +61,19 @@ const LoginPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="relative z-10 w-full max-w-md"
+        className="relative z-10 w-full max-w-md px-2 sm:px-0"
       >
         {/* Login Card */}
-        <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-8 shadow-2xl backdrop-blur-xl">
+        <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
           {/* Logo/Header */}
           <div className="mb-8 flex flex-col items-center">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-500 to-purple-500">
               <span className="text-2xl text-white">AG</span>
             </div>
-            <h1 className="mb-2 text-center text-white">Portfolio CMS</h1>
-            <p className="text-center text-sm text-slate-400">Sign in to manage your portfolio</p>
+            <h1 className="mb-2 text-center text-lg text-white sm:text-xl">Portfolio CMS</h1>
+            <p className="text-center text-xs text-slate-400 sm:text-sm">
+              Sign in to manage your portfolio
+            </p>
           </div>
 
           {/* Login Form */}
@@ -164,7 +166,7 @@ const LoginPage = () => {
               disabled={isLoading}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 text-white shadow-lg shadow-cyan-500/30 transition-shadow hover:shadow-cyan-500/50 disabled:cursor-not-allowed disabled:opacity-50"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 px-6 py-3 text-sm text-white shadow-lg shadow-cyan-500/30 transition-shadow hover:shadow-cyan-500/50 disabled:cursor-not-allowed disabled:opacity-50 sm:py-3.5 sm:text-base"
             >
               <LogIn className="h-5 w-5" />
               {isLoading ? 'Signing in...' : 'Sign In'}
