@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { Plus, Trash2, Eye, ExternalLink } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { TagInput } from '@/components/screen/TagInput';
 import { FileUpload } from '@/components/screen/FileUpload';
 import { FormCard } from '@/components/screen/FormCard';
