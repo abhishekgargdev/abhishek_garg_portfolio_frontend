@@ -6,18 +6,18 @@ export const RESET_PASSWORD_URL = '/reset-password';
 
 // Private/Admin Routes
 export const DASHBOARD_APP_URL = '/dashboard';
-export const HERO_URL = '/dashboard/hero';
-export const ABOUT_URL = '/dashboard/about-me';
-export const EXPERIENCE_URL = '/dashboard/experience';
-export const SKILLS_URL = '/dashboard/skills';
-export const PROJECTS_URL = '/dashboard/projects';
-export const CERTIFICATES_URL = '/dashboard/certificates';
-export const BLOG_URL = '/dashboard/blog';
-export const ACHIEVEMENTS_URL = '/dashboard/achievements';
-export const TESTIMONIALS_URL = '/dashboard/testimonials';
-export const CONTACT_URL = '/dashboard/contact';
-export const PDF_VIEWER_URL = '/dashboard/pdf-viewer';
-export const LINKEDIN_URL = '/dashboard/linkedin';
+export const HERO_URL = '/hero';
+export const ABOUT_URL = '/about-me';
+export const EXPERIENCE_URL = '/experience';
+export const SKILLS_URL = '/skills';
+export const PROJECTS_URL = '/projects';
+export const CERTIFICATES_URL = '/certificates';
+export const BLOG_URL = '/blog';
+export const ACHIEVEMENTS_URL = '/achievements';
+export const TESTIMONIALS_URL = '/testimonials';
+export const CONTACT_URL = '/contact';
+export const PDF_VIEWER_URL = '/pdf-viewer';
+export const LINKEDIN_URL = '/linkedin';
 
 // Route Groups
 export const AUTH_ROUTES = [LOGIN_URL, FORGOT_PASSWORD_URL];
