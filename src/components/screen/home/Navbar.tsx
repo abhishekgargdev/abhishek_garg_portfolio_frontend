@@ -29,40 +29,42 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-4 backdrop-blur-lg bg-white/70 dark:bg-black/70 shadow-lg' : 'py-6 bg-transparent'
+      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? 'bg-white/70 py-4 shadow-lg backdrop-blur-lg dark:bg-black/70'
+          : 'bg-transparent py-6'
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className="container mx-auto flex items-center justify-between px-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent"
+          className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-2xl font-bold text-transparent"
         >
           AG.
         </motion.div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-8">
+        <div className="hidden items-center space-x-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-700 dark:text-gray-300 hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors font-medium"
+              className="font-medium text-gray-700 transition-colors hover:text-cyan-500 dark:text-gray-300 dark:hover:text-cyan-400"
             >
               {link.name}
             </a>
           ))}
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 transition-colors"
+            className="rounded-full bg-gray-100 p-2 text-gray-700 transition-colors dark:bg-gray-800 dark:text-gray-300"
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </div>
 
         {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center space-x-4">
+        <div className="flex items-center space-x-4 md:hidden">
           <button onClick={toggleTheme} className="p-2 text-gray-700 dark:text-gray-300">
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
@@ -79,15 +81,15 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white dark:bg-gray-900 border-t border-gray-100 dark:border-gray-800"
+            className="border-t border-gray-100 bg-white md:hidden dark:border-gray-800 dark:bg-gray-900"
           >
-            <div className="flex flex-col p-6 space-y-4">
+            <div className="flex flex-col space-y-4 p-6">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-700 dark:text-gray-300 text-lg font-medium"
+                  className="text-lg font-medium text-gray-700 dark:text-gray-300"
                 >
                   {link.name}
                 </a>

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import { AboutMe } from '@/components/screen/home/AboutMe';
 import { BlogSection } from '@/components/screen/home/BlogSection';
 import { CertificatesSection } from '@/components/screen/home/CertificatesSection';
@@ -16,10 +16,10 @@ import React from 'react';
 
 const page = () => {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300 relative">
+    <div className="relative min-h-screen bg-white transition-colors duration-300 dark:bg-gray-950">
       <GlobalShapesBackground />
-       <Navbar />
-        <main>
+      <Navbar />
+      <main>
         <Hero />
         <JourneyLadder />
         <AboutMe />

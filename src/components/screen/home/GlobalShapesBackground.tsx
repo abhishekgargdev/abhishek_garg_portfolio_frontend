@@ -12,7 +12,7 @@ export const GlobalShapesBackground = () => {
       duration: Math.random() * 20 + 20,
       delay: Math.random() * 10,
       type: i % 3 === 0 ? 'circle' : i % 3 === 1 ? 'square' : 'triangle',
-      color: i % 2 === 0 ? 'bg-cyan-500/10' : 'bg-blue-500/10'
+      color: i % 2 === 0 ? 'bg-cyan-500/10' : 'bg-blue-500/10',
     }));
   }, []);
 
@@ -22,12 +22,12 @@ export const GlobalShapesBackground = () => {
       left: Math.random() * 80 + 10,
       top: Math.random() * 80 + 10,
       size: Math.random() * 100 + 150,
-      duration: 30 + i * 5
+      duration: 30 + i * 5,
     }));
   }, []);
 
   return (
-    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+    <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {/* Moving Particles/Dots */}
       {shapes.map((shape) => (
         <motion.div
@@ -49,7 +49,7 @@ export const GlobalShapesBackground = () => {
             duration: shape.duration,
             repeat: Infinity,
             delay: shape.delay,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         />
       ))}
@@ -67,22 +67,22 @@ export const GlobalShapesBackground = () => {
           }}
         >
           <motion.div
-            className="w-full h-full border border-cyan-500/10 rounded-full relative"
+            className="relative h-full w-full rounded-full border border-cyan-500/10"
             animate={{ rotate: 360 }}
-            transition={{ duration: atom.duration, repeat: Infinity, ease: "linear" }}
+            transition={{ duration: atom.duration, repeat: Infinity, ease: 'linear' }}
           >
-            <motion.div 
-              className="absolute -top-2 left-1/2 w-3 h-3 bg-cyan-400/30 rounded-full blur-[2px]"
+            <motion.div
+              className="absolute -top-2 left-1/2 h-3 w-3 rounded-full bg-cyan-400/30 blur-[2px]"
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-blue-500/5 rounded-full blur-xl" />
+            <div className="absolute top-1/2 left-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-xl" />
           </motion.div>
         </div>
       ))}
 
       {/* Grid Pattern with subtle pulse */}
-      <motion.div 
+      <motion.div
         animate={{ opacity: [0.05, 0.1, 0.05] }}
         transition={{ duration: 10, repeat: Infinity }}
         className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:60px_60px]"
