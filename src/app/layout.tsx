@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { ThemeProvider } from 'next-themes';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Abhishek Garg - Portfolio CMS',
-  description: 'Content Management System for Portfolio',
+  title: 'Abhishek Garg - Portfolio',
+  description: 'Senior Software Developer specializing in MERN Stack, FastAPI & Cloud Architecture',
 };
 
 export default function RootLayout({
@@ -26,14 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem={false}
-          storageKey="portfolio-theme"
-        >
-          {children}
-        </ThemeProvider>
+        {children}
       </body>
     </html>
   );

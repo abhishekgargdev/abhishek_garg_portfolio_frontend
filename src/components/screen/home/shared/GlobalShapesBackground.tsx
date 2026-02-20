@@ -1,8 +1,9 @@
+'use client';
+
 import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
 
 export const GlobalShapesBackground = () => {
-  // Generate stable random properties for shapes
   const shapes = useMemo(() => {
     return Array.from({ length: 15 }).map((_, i) => ({
       id: i,
@@ -11,7 +12,6 @@ export const GlobalShapesBackground = () => {
       top: Math.random() * 100,
       duration: Math.random() * 20 + 20,
       delay: Math.random() * 10,
-      type: i % 3 === 0 ? 'circle' : i % 3 === 1 ? 'square' : 'triangle',
       color: i % 2 === 0 ? 'bg-cyan-500/10' : 'bg-blue-500/10',
     }));
   }, []);
@@ -28,7 +28,6 @@ export const GlobalShapesBackground = () => {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      {/* Moving Particles/Dots */}
       {shapes.map((shape) => (
         <motion.div
           key={shape.id}
@@ -54,7 +53,6 @@ export const GlobalShapesBackground = () => {
         />
       ))}
 
-      {/* Orbiting Atoms / AI Orbs */}
       {atoms.map((atom) => (
         <div
           key={atom.id}
@@ -76,12 +74,10 @@ export const GlobalShapesBackground = () => {
               animate={{ scale: [1, 1.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             />
-            <div className="absolute top-1/2 left-1/2 h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/5 blur-xl" />
           </motion.div>
         </div>
       ))}
 
-      {/* Grid Pattern with subtle pulse */}
       <motion.div
         animate={{ opacity: [0.05, 0.1, 0.05] }}
         transition={{ duration: 10, repeat: Infinity }}

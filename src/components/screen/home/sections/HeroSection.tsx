@@ -1,7 +1,10 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import { ChevronDown, Download, Briefcase, Code } from 'lucide-react';
-import { ImageWithFallback } from './ImageWithFallback';
+import { ImageWithFallback } from '@/components/screen/home/shared/ImageWithFallback';
+import { Button } from '@/components/ui/button';
 
 const roles = [
   'MERN Stack Expert',
@@ -11,7 +14,7 @@ const roles = [
   'Tech Mentor',
 ];
 
-export const Hero = () => {
+export const HeroSection = () => {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -43,7 +46,8 @@ export const Hero = () => {
       id="home"
       className="relative flex min-h-screen items-center justify-center overflow-hidden pt-20"
     >
-      <div className="relative z-10 container mx-auto grid items-center gap-12 px-6 md:grid-cols-2">
+      <div className="relative z-10 container mx-auto grid items-center gap-12 px-4 sm:px-6 md:grid-cols-2">
+        {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -53,67 +57,71 @@ export const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="mb-4 font-semibold tracking-wider text-cyan-500 uppercase dark:text-cyan-400"
+            className="mb-4 font-semibold tracking-wider text-cyan-600 uppercase"
           >
             Welcome to my digital space
           </motion.p>
-          <h1 className="mb-6 text-5xl leading-tight font-bold text-gray-900 md:text-7xl dark:text-white">
-            Hi, I'm{' '}
-            <span className="bg-gradient-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="mb-6 text-4xl leading-tight font-bold text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+            Hi, I&apos;m{' '}
+            <span className="bg-gradient-to-r from-cyan-500 to-blue-600 bg-clip-text text-transparent">
               Abhishek Garg
             </span>
           </h1>
-          <div className="mb-8 h-12">
-            <p className="flex items-center text-2xl text-gray-600 md:text-3xl dark:text-gray-400">
+          <div className="mb-8 h-10 sm:h-12">
+            <p className="flex items-center text-xl text-gray-600 sm:text-2xl md:text-3xl">
               <span className="mr-2">&gt;</span>
               {displayText}
-              <span className="ml-1 h-8 w-1 animate-pulse bg-cyan-500" />
+              <span className="ml-1 h-7 w-0.5 animate-pulse bg-cyan-500 sm:h-8" />
             </p>
           </div>
-          <p className="mb-10 max-w-lg text-lg leading-relaxed text-gray-600 dark:text-gray-400">
+          <p className="mb-10 max-w-lg text-base leading-relaxed text-gray-600 sm:text-lg">
             Crafting high-performance web applications with modern tech stacks. Specialized in
             building scalable backends and pixel-perfect frontends.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <motion.a
-              href="#experience"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 px-8 py-4 font-bold text-white shadow-lg shadow-cyan-500/20"
+          <div className="flex flex-wrap gap-3 sm:gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-lg shadow-cyan-500/20 hover:from-cyan-600 hover:to-blue-700"
             >
-              <Briefcase size={20} />
-              Explore Journey
-            </motion.a>
-            <motion.a
-              href="#projects"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 rounded-full border border-gray-200 bg-white px-8 py-4 font-bold text-gray-900 shadow-sm dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+              <a href="#experience">
+                <Briefcase size={18} className="mr-2" />
+                Explore Journey
+              </a>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="rounded-full border-gray-200 text-gray-900"
             >
-              <Code size={20} />
-              View Projects
-            </motion.a>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="flex items-center gap-2 rounded-full bg-gray-900 px-8 py-4 font-bold text-white dark:bg-white dark:text-gray-900"
+              <a href="#projects">
+                <Code size={18} className="mr-2" />
+                View Projects
+              </a>
+            </Button>
+            <Button
+              variant="secondary"
+              size="lg"
+              className="rounded-full bg-gray-900 text-white hover:bg-gray-800"
             >
-              <Download size={20} />
+              <Download size={18} className="mr-2" />
               Resume
-            </motion.button>
+            </Button>
           </div>
         </motion.div>
 
+        {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           className="relative flex justify-center"
         >
-          <div className="relative h-72 w-72 md:h-96 md:w-96">
+          <div className="relative h-72 w-72 sm:h-80 sm:w-80 md:h-96 md:w-96">
             <div className="animate-spin-slow absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 opacity-20 blur-xl" />
-            <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white shadow-2xl dark:border-gray-800">
+            <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-white shadow-2xl">
               <ImageWithFallback
                 src="https://images.unsplash.com/photo-1671450960874-0903baf942c5?auto=format&fit=crop&q=80&w=800"
                 alt="Abhishek Garg"
@@ -121,11 +129,11 @@ export const Hero = () => {
               />
             </div>
 
-            {/* Floating Tech Icons */}
+            {/* Floating Tech Badges */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 3 }}
-              className="absolute -top-4 -right-4 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800"
+              className="absolute -top-4 -right-4 rounded-xl border border-gray-100 bg-white p-3 shadow-lg"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
@@ -136,7 +144,7 @@ export const Hero = () => {
             <motion.div
               animate={{ y: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 4, delay: 0.5 }}
-              className="absolute top-1/2 -left-8 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800"
+              className="absolute top-1/2 -left-8 rounded-xl border border-gray-100 bg-white p-3 shadow-lg"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
@@ -147,7 +155,7 @@ export const Hero = () => {
             <motion.div
               animate={{ x: [0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 5, delay: 1 }}
-              className="absolute right-1/4 -bottom-4 rounded-xl border border-gray-100 bg-white p-3 shadow-lg dark:border-gray-700 dark:bg-gray-800"
+              className="absolute right-1/4 -bottom-4 rounded-xl border border-gray-100 bg-white p-3 shadow-lg"
             >
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"

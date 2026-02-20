@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { motion } from 'motion/react';
 
@@ -24,7 +26,7 @@ export const GlassCard = ({ children, className = '', delay = 0 }: GlassCardProp
         delay,
         scale: { type: 'spring', stiffness: 300, damping: 15 },
       }}
-      className={`rounded-2xl border border-white/20 bg-white/10 shadow-xl backdrop-blur-md transition-colors duration-300 dark:border-white/10 dark:bg-black/20 ${className}`}
+      className={`rounded-2xl border border-gray-200/60 bg-white/80 shadow-xl backdrop-blur-md transition-colors duration-300 ${className}`}
     >
       {children}
     </motion.div>
